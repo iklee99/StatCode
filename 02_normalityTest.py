@@ -13,7 +13,7 @@ data_column = data['value']
 # Kolmogorov-Smirnov Test
 ks_statistic, ks_p_value = stats.kstest(data_column, 'norm')
 print(f"Kolmogorov-Smirnov Test: Statistic={ks_statistic}, p-value={ks_p_value}")
-#print("\n")
+
 print("H0: Dataset은 normally distributed 되어 있다")
 if ks_p_value > 0.05:
     print("p-value > 0.05 이므로 H0를 reject 할 수 없다")
@@ -26,7 +26,7 @@ print("\n")
 # Shapiro-Wilk Test
 sw_statistic, sw_p_value = stats.shapiro(data_column)
 print(f"Shapiro-Wilk Test: Statistic={sw_statistic}, p-value={sw_p_value}")
-#print("\n")
+
 print("H0: Dataset은 normally distributed 되어 있다")
 if sw_p_value > 0.05:
     print("p-value > 0.05 이므로 H0를 reject 할 수 없다")
@@ -39,7 +39,7 @@ print("\n")
 ad_result = stats.anderson(data_column, dist='norm')
 print(f"Anderson-Darling Test: Statistic={ad_result.statistic}")
 isNormal = True
-#print("\n")
+
 for i in range(len(ad_result.critical_values)):
     sl, cv = ad_result.significance_level[i], ad_result.critical_values[i]
     print(f"Significance Level: {sl}, Critical Value: {cv}")
