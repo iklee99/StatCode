@@ -19,6 +19,16 @@ mu, std = norm.fit(sample_data)
 # Z-분포 (Z-Distribution)
 z_scores = (sample_data - mu) / std
 
+# 주어진 Z score 값에 대한 확률 계산 (Standard Normal Table)
+z_value = 1.96
+probability = norm.cdf(z_value)
+print(f"Z score 1.96 의 확률 (Standard Normal Table) = {probability}")
+
+# 주어진 확률에 대한 Z score 계산
+probability = 0.975
+z_score = norm.ppf(probability)
+print(f"확률 0.975에 대한 Z-score = {z_score}")
+
 # T-분포 (T-Distribution)
 degrees_of_freedom = len(sample_data) - 1
 t_scores = (sample_data - np.mean(sample_data)) / (np.std(sample_data, ddof=1) / np.sqrt(len(sample_data)))
