@@ -28,6 +28,9 @@ print(f"Z score 1.96 의 확률 (Standard Normal Table) = {probability}")
 probability = 0.975
 z_score = norm.ppf(probability)
 print(f"확률 0.975에 대한 Z-score = {z_score}")
+probability = 0.995
+z_score = norm.ppf(probability)
+print(f"확률 0.995에 대한 Z-score = {z_score}")
 
 # T-분포 (T-Distribution)
 degrees_of_freedom = len(sample_data) - 1
